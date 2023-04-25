@@ -1,17 +1,18 @@
 <?php
 /*
- * Plugin Name:       Animation Slider
- * Plugin URI:        https://wordpress.org/plugins/search/animation-slider/
- * Description:       This is a best wordpress slider plugin.
+ * Plugin Name:        Advance WP Slider
+ * Plugin URI:        https://wordpress.org/plugins/advance-wp-slider
+ * Description:       Animation slider in WordPress. It easy to install and implement in frontend with shortcode.
  * Version:           1.0.0
  * Requires at least: 5.2
+ * Tested up to:      6.2
  * Requires PHP:      7.2
- * Author:            Rajubdpro
+ * Author:            rajubdpro
  * Author URI:        https://codepopular.com/
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Update URI:        https://example.com/my-plugin/
- * Text Domain:       awp-slider
+ * Text Domain:       advance-wp-slider
  * Domain Path:       /languages
  */
 
@@ -30,6 +31,6 @@ define('AWP_PLUGIN_PATH', trailingslashit(plugin_dir_path(__FILE__)));
 
 include_once(dirname(__FILE__) . '/inc/Awp_Loader.php');
 
-if (function_exists('awp_slider')) {
+if ( function_exists('awp_slider') ) {
     awp_slider();
 }

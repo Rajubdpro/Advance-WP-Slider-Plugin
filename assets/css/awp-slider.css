@@ -1,3 +1,18 @@
+:root{
+    --slider-navigator-color:#fff;
+    --slider-heading-color:#fff;
+    --slider-title-color:#fff;
+    --slider-button-text-color:#fff;
+    --slider-button-text-hover-color:#fff;
+    --slider-button-color:#fff;
+    --slider-button-hover-color:#fff;
+
+    --slider-heading-size:15px;
+    --slider-title-size:8px;
+    --slider-button-size:8px;
+
+  }
+
 body {
     margin: 0;
     padding: 0;
@@ -80,7 +95,7 @@ body {
 }
 
 .jssorb053 .i .b {
-    fill: #fff;
+    fill: var(--slider-navigator-color);
     fill-opacity: 0.5;
 }
 
@@ -104,14 +119,14 @@ body {
 
 .jssora093 .c {
     fill: none;
-    stroke: #fff;
+    stroke: var(--slider-navigator-color);
     stroke-width: 400;
     stroke-miterlimit: 10;
 }
 
 .jssora093 .a {
     fill: none;
-    stroke: #fff;
+    stroke: var(--slider-navigator-color);
     stroke-width: 400;
     stroke-miterlimit: 10;
 }
@@ -145,21 +160,24 @@ body {
 
 .slider-content {
     text-align: center;
-    color: #fff !important;
+    padding: 50px 350px;
+    color: #fff;
 }
 
 .slider-content h2 {
-    color: #fff !important;
+    color: var(--slider-heading-color) !important;
+    font-size: var(--slider-heading-size);
 }
 
 .slider-content p {
-    font-size: 10px;
+    color: var(--slider-title-color) !important;
+    font-size: var(--slider-title-size) !important;
 }
 
 .slider-content .btn a {
-    background-color: #fff;
-    color: #333;
-    font-size: 10px;
+    background-color: var(--slider-button-color);
+    color: var(--slider-button-text-color);
+    font-size: var(--slider-button-size);
     padding: 8px 13px;
     text-decoration: none;
     border-radius: 5px;
@@ -168,6 +186,6 @@ body {
 }
 
 .slider-content .btn a:hover {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--slider-button-hover-color);
+    color: var(--slider-button-text-hover-color);
 }

@@ -11,9 +11,8 @@ class Awp_Slider_Frontend
     /**
      * Make instance of the admin class.
      */
-    public static function get_instance()
-    {
-        if (!self::$instance)
+    public static function get_instance() {
+        if ( ! self::$instance)
             self::$instance = new self();
         return self::$instance;
     }
@@ -21,34 +20,37 @@ class Awp_Slider_Frontend
     /**
      * Initialize global hooks.
      */
-    public function init()
-    {
+    public function init() {
+        // Color Customize action
+        add_action('wp_head', [ $this, 'awp_theme_color_cus' ]);
+
+        // Color Customize action
+        add_action('customize_register', [ $this, 'awp_slider_theme_color_cus' ]);
 
         // Add style Action
-        add_action("wp_enqueue_scripts", [$this, 'awp_slider_load_css_and_js']);
+        add_action("wp_enqueue_scripts", [ $this, 'awp_slider_load_css_and_js' ]);
 
         // Add Slider Custom post action
-        add_action('init', [$this, 'awp_slider_custom_post_type']);
+        add_action('init', [ $this, 'awp_slider_custom_post_type' ]);
 
         // Add Slider ShortCode action
-        add_action('init', [$this, 'awp_slider_shortcode']);
+        add_action('init', [ $this, 'awp_slider_shortcode' ]);
 
         // Add Jquery Action
-        add_action('wp_footer', [$this, 'awp_slider_script_jquery'], 100);
+        add_action('wp_footer', [ $this, 'awp_slider_script_jquery' ], 100);
     }
 
 
     // Including css
-    function awp_slider_load_css_and_js()
-    {
+    function awp_slider_load_css_and_js() {
         // Add Slider Css
-        wp_enqueue_style('awp-slider-style', (AWP_SLIDER_PLUGIN_URL . 'assets/css/awp-slider.css'));
+        wp_enqueue_style('awp-slider-style', (AWP_SLIDER_PLUGIN_URL . 'assets/css/awp-slider.css'), array(), AWP_PLUGIN_VERSION );
         // Add Slider jquery
         wp_enqueue_script('jquery');
         // Add Slider jquery min
-        wp_enqueue_script('awp-min-slider-script', (AWP_SLIDER_PLUGIN_URL . 'assets/js/awp-slider-min.js'), array('jquery'), '1.0.0', true);
+        wp_enqueue_script('awp-min-slider-script', (AWP_SLIDER_PLUGIN_URL . 'assets/js/awp-slider-min.js'), array( 'jquery' ), AWP_PLUGIN_VERSION, true);
         // Add Slider custom js
-        wp_enqueue_script('awp-slider-script', (AWP_SLIDER_PLUGIN_URL . 'assets/js/awp-slider.js'), array('jquery'), '1.0.0', true);
+        wp_enqueue_script('awp-slider-script', (AWP_SLIDER_PLUGIN_URL . 'assets/js/awp-slider.js'), array( 'jquery' ), AWP_PLUGIN_VERSION, true);
     }
 
 
@@ -59,43 +61,42 @@ class Awp_Slider_Frontend
      * Register Custom Post Type
      */
 
-    function awp_slider_custom_post_type()
-    {
+    function awp_slider_custom_post_type() {
 
         $labels = array(
-            'name'                  => _x('AWP Sliders', 'Post Type General Name', 'awpslider'),
-            'singular_name'         => _x('AWP Slider', 'Post Type Singular Name', 'awpslider'),
-            'menu_name'             => __('AWP Sliders', 'awpslider'),
-            'name_admin_bar'        => __('AWP Slider', 'awpslider'),
-            'archives'              => __('Item Archives', 'awpslider'),
-            'attributes'            => __('Item Attributes', 'awpslider'),
-            'parent_item_colon'     => __('Parent Item:', 'awpslider'),
-            'all_items'             => __('All Items', 'awpslider'),
-            'add_new_item'          => __('Add New Item', 'awpslider'),
-            'add_new'               => __('Add New', 'awpslider'),
-            'new_item'              => __('New Item', 'awpslider'),
-            'edit_item'             => __('Edit Item', 'awpslider'),
-            'update_item'           => __('Update Item', 'awpslider'),
-            'view_item'             => __('View Item', 'awpslider'),
-            'view_items'            => __('View Items', 'awpslider'),
-            'search_items'          => __('Search Item', 'awpslider'),
-            'not_found'             => __('Not found', 'awpslider'),
-            'not_found_in_trash'    => __('Not found in Trash', 'awpslider'),
-            'featured_image'        => __('Featured Image', 'awpslider'),
-            'set_featured_image'    => __('Set featured image', 'awpslider'),
-            'remove_featured_image' => __('Remove featured image', 'awpslider'),
-            'use_featured_image'    => __('Use as featured image', 'awpslider'),
-            'insert_into_item'      => __('Insert into item', 'awpslider'),
-            'uploaded_to_this_item' => __('Uploaded to this item', 'awpslider'),
-            'items_list'            => __('Items list', 'awpslider'),
-            'items_list_navigation' => __('Items list navigation', 'awpslider'),
-            'filter_items_list'     => __('Filter items list', 'awpslider'),
+            'name'                  => _x('AWP Sliders', 'Post Type General Name', 'advance-wp-slider'),
+            'singular_name'         => _x('AWP Slider', 'Post Type Singular Name', 'advance-wp-slider'),
+            'menu_name'             => __('AWP Sliders', 'advance-wp-slider'),
+            'name_admin_bar'        => __('AWP Slider', 'advance-wp-slider'),
+            'archives'              => __('Item Archives', 'advance-wp-slider'),
+            'attributes'            => __('Item Attributes', 'advance-wp-slider'),
+            'parent_item_colon'     => __('Parent Item:', 'advance-wp-slider'),
+            'all_items'             => __('All Items', 'advance-wp-slider'),
+            'add_new_item'          => __('Add New Item', 'advance-wp-slider'),
+            'add_new'               => __('Add New', 'advance-wp-slider'),
+            'new_item'              => __('New Item', 'advance-wp-slider'),
+            'edit_item'             => __('Edit Item', 'advance-wp-slider'),
+            'update_item'           => __('Update Item', 'advance-wp-slider'),
+            'view_item'             => __('View Item', 'advance-wp-slider'),
+            'view_items'            => __('View Items', 'advance-wp-slider'),
+            'search_items'          => __('Search Item', 'advance-wp-slider'),
+            'not_found'             => __('Not found', 'advance-wp-slider'),
+            'not_found_in_trash'    => __('Not found in Trash', 'advance-wp-slider'),
+            'featured_image'        => __('Featured Image', 'advance-wp-slider'),
+            'set_featured_image'    => __('Set featured image', 'advance-wp-slider'),
+            'remove_featured_image' => __('Remove featured image', 'advance-wp-slider'),
+            'use_featured_image'    => __('Use as featured image', 'advance-wp-slider'),
+            'insert_into_item'      => __('Insert into item', 'advance-wp-slider'),
+            'uploaded_to_this_item' => __('Uploaded to this item', 'advance-wp-slider'),
+            'items_list'            => __('Items list', 'advance-wp-slider', 'Setting'),
+            'items_list_navigation' => __('Items list navigation', 'advance-wp-slider'),
+            'filter_items_list'     => __('Filter items list', 'advance-wp-slider'),
         );
         $args = array(
-            'label'                 => __('AWP Slider', 'awpslider'),
-            'description'           => __('AWP Slider Description', 'awpslider'),
+            'label'                 => __('AWP Slider', 'advance-wp-slider'),
+            'description'           => __('AWP Slider Description', 'advance-wp-slider'),
             'labels'                => $labels,
-            'supports'              => array('title', 'editor', 'thumbnail'),
+            'supports'              => array( 'title', 'editor', 'thumbnail' ),
             'hierarchical'          => false,
             'public'                => true,
             'show_ui'               => true,
@@ -113,24 +114,21 @@ class Awp_Slider_Frontend
     }
 
 
-
-
     /**
      * Show Slider Post Data
      */
 
-    function awp_slider_post_loop()
-    {
+    function awp_slider_post_loop() {
 
         ob_start();
-?>
+    ?>
         <div id="jssor_1">
             <div class="slider" data-u="slides">
                 <?php
                 // WP_Query arguments
                 $args = array(
-                    'post_type'              => array('awp-slider'),
-                    'order' =>'asc'
+                    'post_type'              => array( 'awp-slider' ),
+                    'order' => 'asc',
                 );
 
                 // The Query
@@ -138,8 +136,8 @@ class Awp_Slider_Frontend
 
                 // The Loop slider item
 
-                if ($awp_slider_query->have_posts()) {
-                    while ($awp_slider_query->have_posts()) {
+                if ( $awp_slider_query->have_posts() ) {
+                    while ( $awp_slider_query->have_posts() ) {
                         $awp_slider_query->the_post();
                         // do something
                 ?>
@@ -202,8 +200,7 @@ class Awp_Slider_Frontend
      * Add plugin script jquery
      */
 
-    function awp_slider_script_jquery()
-    { ?>
+    function awp_slider_script_jquery() { ?>
         <script type="text/javascript">
             jssor_1_slider_init();
         </script><?php
@@ -215,11 +212,166 @@ class Awp_Slider_Frontend
                  *
                  * @return void
                  */
-                function awp_slider_shortcode()
-                {
-                    add_shortcode('AWP-SLIDER', [$this, 'awp_slider_post_loop']);
+                function awp_slider_shortcode() {
+                    add_shortcode('AWP-SLIDER', [ $this, 'awp_slider_post_loop' ]);
+                }
+
+
+                // Add section
+                function awp_slider_theme_color_cus( $wp_customize ) {
+                    $wp_customize->add_section('awp_slider_theme_color_cus', array(
+                        'title' => __('Awp Slider Customize', 'advance-wp-slider'),
+
+                    ));
+
+                    //Add navigator color setting
+                    $wp_customize->add_setting('awp_slider_defult_color', array(
+                        'defult' => '#000000',
+                    ));
+                    //Add navigator color control
+                    $wp_customize->add_control('awp_slider_defult_color', array(
+                        'label' => __('Bullet & Navigator Color', 'advance-wp-slider'),
+                        'section' => 'awp_slider_theme_color_cus',
+                        'type' => 'color',
+                    ));
+
+
+                    /**
+                     * Header customize
+                     */
+
+                    //Add Header color setting
+                    $wp_customize->add_setting('awp_slider_header_defult_color', array(
+                        'defult' => '#000000',
+                    ));
+                    //Add Header color control
+                    $wp_customize->add_control('awp_slider_header_defult_color', array(
+                        'label' => __('Header Color', 'advance-wp-slider'),
+                        'section' => 'awp_slider_theme_color_cus',
+                        'type' => 'color',
+                    ));
+
+                    //Add Header text setting
+                    $wp_customize->add_setting('awp_slider_header_defult_size', array(
+                        'defult' => '12px',
+                    ));
+                    //Add Header text control
+                    $wp_customize->add_control('awp_slider_header_defult_size', array(
+                        'label' => __('Header Text Size', 'advance-wp-slider'),
+                        'section' => 'awp_slider_theme_color_cus',
+                        'type' => 'size',
+                    ));
+
+                    /**
+                     * Title Customize
+                     */
+
+                    //Add title color setting
+                    $wp_customize->add_setting('awp_slider_defult_title_color', array(
+                        'defult' => '#000000',
+                    ));
+                    //Add title color control
+                    $wp_customize->add_control('awp_slider_defult_title_color', array(
+                        'label' => __('Title Color', 'advance-wp-slider'),
+                        'section' => 'awp_slider_theme_color_cus',
+                        'type' => 'color',
+                    ));
+
+                    //Add title size setting
+                    $wp_customize->add_setting('awp_slider_defult_title_size', array(
+                        'defult' => '10px',
+                    ));
+                    //Add title size control
+                    $wp_customize->add_control('awp_slider_defult_title_size', array(
+                        'label' => __('Title Size', 'advance-wp-slider'),
+                        'section' => 'awp_slider_theme_color_cus',
+                        'type' => 'size',
+                    ));
+
+                    /**
+                     * Button Customize
+                     */
+
+                    //Add Button size setting
+                    $wp_customize->add_setting('awp_slider_defult_button_size', array(
+                        'defult' => '12px',
+                    ));
+                    //Add Button size setting
+                    $wp_customize->add_control('awp_slider_defult_button_size', array(
+                        'label' => __('Button Size', 'advance-wp-slider'),
+                        'section' => 'awp_slider_theme_color_cus',
+                        'type' => 'size',
+                    ));
+                    //Add Button text color setting
+                    $wp_customize->add_setting('awp_slider_defult_button_text_color', array(
+                        'defult' => '#000000',
+                    ));
+                    //Add Button text color setting
+                    $wp_customize->add_control('awp_slider_defult_button_text_color', array(
+                        'label' => __('Button Text Color', 'advance-wp-slider'),
+                        'section' => 'awp_slider_theme_color_cus',
+                        'type' => 'color',
+                    ));
+
+                    //Add Button text hover color setting
+                    $wp_customize->add_setting('awp_slider_defult_button_text_hover_color', array(
+                        'defult' => '#000000',
+                    ));
+
+                    //Add Button text hover color setting
+                    $wp_customize->add_control('awp_slider_defult_button_text_hover_color', array(
+                        'label' => __('Button Text hover Color', 'advance-wp-slider'),
+                        'section' => 'awp_slider_theme_color_cus',
+                        'type' => 'color',
+                    ));
+
+                    //Add Button color setting
+                    $wp_customize->add_setting('awp_slider_defult_button_color', array(
+                        'defult' => '#000000',
+                    ));
+                    //Add Button color setting
+                    $wp_customize->add_control('awp_slider_defult_button_color', array(
+                        'label' => __('Button Color', 'advance-wp-slider'),
+                        'section' => 'awp_slider_theme_color_cus',
+                        'type' => 'color',
+                    ));
+
+                    //Add Button hover color setting
+                    $wp_customize->add_setting('awp_slider_defult_button_hover_color', array(
+                        'defult' => '#000000',
+                    ));
+                    //Add Button hover color setting
+                    $wp_customize->add_control('awp_slider_defult_button_hover_color', array(
+                        'label' => __('Button hover Color', 'advance-wp-slider'),
+                        'section' => 'awp_slider_theme_color_cus',
+                        'type' => 'color',
+                    ));
+                }
+
+
+                // Theme color customize
+                function awp_theme_color_cus() {
+                    ?>
+
+        <style>
+            :root {
+                --slider-navigator-color: <?php echo esc_attr(get_theme_mod('awp_slider_defult_color')); ?>;
+                --slider-heading-color: <?php echo esc_attr( get_theme_mod('awp_slider_header_defult_color')); ?>;
+                --slider-title-color: <?php echo esc_attr( get_theme_mod('awp_slider_defult_title_color')); ?>;
+                --slider-button-text-color: <?php echo esc_attr( get_theme_mod('awp_slider_defult_button_text_color')); ?>;
+                --slider-button-text-hover-color: <?php echo esc_attr( get_theme_mod('awp_slider_defult_button_text_hover_color')); ?>;
+                --slider-button-color: <?php echo esc_attr( get_theme_mod('awp_slider_defult_button_color')); ?>;
+                --slider-button-hover-color: <?php echo esc_attr( get_theme_mod('awp_slider_defult_button_hover_color')); ?>;
+
+                --slider-heading-size: <?php echo esc_attr( get_theme_mod('awp_slider_header_defult_size')); ?>;
+                --slider-title-size: <?php echo esc_attr( get_theme_mod('awp_slider_defult_title_size')); ?>;
+                --slider-button-size: <?php echo esc_attr( get_theme_mod('awp_slider_defult_button_size')); ?>;
+            }
+        </style>
+
+
+<?php
                 }
             }
-
 
             Awp_Slider_Frontend::get_instance()->init();

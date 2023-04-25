@@ -1,4 +1,0 @@
-<?php
-//Loader file here
-
-?>

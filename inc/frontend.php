@@ -1,3 +1,0 @@
-<?php
-// Frontend file here
-?>
