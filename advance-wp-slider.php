@@ -5,10 +5,10 @@
  * Description:       Animation slider in WordPress. It easy to install and implement in frontend with shortcode.
  * Version:           1.0.0
  * Requires at least: 5.2
- * Tested up to:      6.2
+ * Tested up to:      6.3
  * Requires PHP:      7.2
  * Author:            rajubdpro
- * Author URI:        https://codepopular.com/
+ * Author URI:        https://profiles.wordpress.org/rajubdpro/profile/edit/group/1/
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Update URI:        https://example.com/my-plugin/
