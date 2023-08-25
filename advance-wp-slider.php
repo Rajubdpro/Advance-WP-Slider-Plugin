@@ -8,7 +8,7 @@
  * Tested up to:      6.3
  * Requires PHP:      7.2
  * Author:            rajubdpro
- * Author URI:        https://profiles.wordpress.org/rajubdpro/profile/edit/group/1/
+ * Author URI:        https://profiles.wordpress.org/rajubdpro/
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Update URI:        https://example.com/my-plugin/
