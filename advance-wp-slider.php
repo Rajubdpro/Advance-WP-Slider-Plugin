@@ -15,10 +15,10 @@
  * Domain Path:       /languages
  */
 
-
-define('AWP_PLUGIN_VERSION', '1.0.0');
-define('AWP_SLIDER_PLUGIN_URL', trailingslashit(plugins_url('/', __FILE__)));
-define('AWP_PLUGIN_PATH', trailingslashit(plugin_dir_path(__FILE__)));
+if ( ! defined( 'ABSPATH' ) ) exit;
+define('AWPSLIDER_PLUGIN_VERSION', '1.0.0');
+define('AWPSLIDER_PLUGIN_URL', trailingslashit(plugins_url('/', __FILE__)));
+define('AWPSLIDER_PLUGIN_PATH', trailingslashit(plugin_dir_path(__FILE__)));
 
 /**----------------------------------------------------------------*/
 /* Include all file
@@ -28,8 +28,8 @@ define('AWP_PLUGIN_PATH', trailingslashit(plugin_dir_path(__FILE__)));
  * Include Awp Loader file
  */
 
-include_once(dirname(__FILE__) . '/inc/Awp_Loader.php');
+include_once(dirname(__FILE__) . '/inc/AwpSlider_Loader.php');
 
-if ( function_exists('awp_slider') ) {
-    awp_slider();
+if ( function_exists('awpslider_loader') ) {
+    awpslider_loader();
 }

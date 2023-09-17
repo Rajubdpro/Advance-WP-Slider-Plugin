@@ -1,5 +1,5 @@
 <?php
-
+if ( ! defined( 'ABSPATH' ) ) exit; //
 /**
  * Class Awp_slider_Admin
  */
@@ -116,31 +116,29 @@ class Awp_slider_Admin
      * @return void
      */
 
-    function save_slider_button_text( $post_id ) {
+    function save_slider_button_text($post_id) {
         // Check if our nonce is set.
-        if ( ! isset($_POST['slider_button_text_nonce']) ) {
+        if (!isset($_POST['slider_button_text_nonce'])) {
             return;
         }
 
         // Verify that the nonce is valid.
-        if ( ! wp_verify_nonce($_POST['slider_button_text_nonce'], 'slider_button_text_nonce') ) {
+        if (!wp_verify_nonce($_POST['slider_button_text_nonce'], 'slider_button_text_nonce')) {
             return;
         }
 
         // If this is an autosave, our form has not been submitted, so we don't want to do anything.
-        if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
+        if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
             return;
         }
 
         // Check the user's permissions.
-        if ( isset($_POST['post_type']) && 'page' == $_POST['post_type'] ) {
-
-            if ( ! current_user_can('edit_page', $post_id) ) {
+        if (isset($_POST['post_type']) && 'page' == $_POST['post_type']) {
+            if (!current_user_can('edit_page', $post_id)) {
                 return;
             }
         } else {
-
-            if ( ! current_user_can('edit_post', $post_id) ) {
+            if (!current_user_can('edit_post', $post_id)) {
                 return;
             }
         }
@@ -148,12 +146,15 @@ class Awp_slider_Admin
         /* OK, it's safe for us to save the data now. */
 
         // Make sure that it is set.
-        if ( ! isset($_POST['slider_button_text']) ) {
+        if (!isset($_POST['slider_button_text'])) {
             return;
         }
 
         // Sanitize user input.
         $my_data = sanitize_text_field($_POST['slider_button_text']);
+
+        // Escape HTML entities for displaying in HTML.
+        $my_data = esc_html($my_data);
 
         // Update the meta field in the database.
         update_post_meta($post_id, 'slider_button_text', $my_data);
@@ -167,31 +168,29 @@ class Awp_slider_Admin
      * @return void
      */
 
-    function save_slider_button_link( $post_id ) {
+    function save_slider_button_link($post_id) {
         // Check if our nonce is set.
-        if ( ! isset($_POST['slider_button_link_nonce']) ) {
+        if (!isset($_POST['slider_button_link_nonce'])) {
             return;
         }
 
         // Verify that the nonce is valid.
-        if ( ! wp_verify_nonce($_POST['slider_button_link_nonce'], 'slider_button_link_nonce') ) {
+        if (!wp_verify_nonce($_POST['slider_button_link_nonce'], 'slider_button_link_nonce')) {
             return;
         }
 
         // If this is an autosave, our form has not been submitted, so we don't want to do anything.
-        if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
+        if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
             return;
         }
 
         // Check the user's permissions.
-        if ( isset($_POST['post_type']) && 'page' == $_POST['post_type'] ) {
-
-            if ( ! current_user_can('edit_page', $post_id) ) {
+        if (isset($_POST['post_type']) && 'page' == $_POST['post_type']) {
+            if (!current_user_can('edit_page', $post_id)) {
                 return;
             }
         } else {
-
-            if ( ! current_user_can('edit_post', $post_id) ) {
+            if (!current_user_can('edit_post', $post_id)) {
                 return;
             }
         }
@@ -199,11 +198,12 @@ class Awp_slider_Admin
         /* OK, it's safe for us to save the data now. */
 
         // Make sure that it is set.
-        if ( ! isset($_POST['slider_button_link']) ) {
+        if (!isset($_POST['slider_button_link'])) {
             return;
         }
+
         // Sanitize user input.
-        $my_data = sanitize_text_field($_POST['slider_button_link']);
+        $my_data = esc_url_raw($_POST['slider_button_link']); // Escaping as a URL
 
         // Update the meta field in the database.
         update_post_meta($post_id, 'slider_button_link', $my_data);

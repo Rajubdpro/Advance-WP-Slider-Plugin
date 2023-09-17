@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$/../../..">
+      <sourceFolder url="file://$MODULE_DIR$/.." isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../classiadspro-core/admin/redux-core2/appsero" isTestSource="false" packagePrefix="ReduxAppsero" />
+      <sourceFolder url="file://$MODULE_DIR$/../directorist/includes" isTestSource="false" packagePrefix="Directorist" />
+      <sourceFolder url="file://$MODULE_DIR$/../directorist/includes/modules/appsero/src" isTestSource="false" packagePrefix="Appsero" />
+      <sourceFolder url="file://$MODULE_DIR$/../elementor-pro" isTestSource="false" packagePrefix="ElementorPro" />
+      <sourceFolder url="file://$MODULE_DIR$/../elementor/includes" isTestSource="false" packagePrefix="Elementor" />
+      <sourceFolder url="file://$MODULE_DIR$/../nextend-facebook-connect" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../nextend-social-login-pro/src" isTestSource="false" packagePrefix="NSLPro" />
+      <sourceFolder url="file://$MODULE_DIR$/../revslider/includes" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../tidio-live-chat/src" isTestSource="false" packagePrefix="TidioLiveChat" />
+      <sourceFolder url="file://$MODULE_DIR$/../woocommerce/packages/action-scheduler/classes" isTestSource="false" packagePrefix="Action_Scheduler" />
+      <sourceFolder url="file://$MODULE_DIR$/../wp-social" isTestSource="false" packagePrefix="WP_Social" />
+      <sourceFolder url="file://$MODULE_DIR$/../wpvivid-backuprestore/includes/lib/aws-sdk-php-2.8.31/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../wp-includes" isTestSource="false" packagePrefix="PHPMailer" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

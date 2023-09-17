@@ -2,7 +2,7 @@ Plugin Name: Advance WP Slider Plugin
 Contributors: rajubdpro
 Author: rajubdpro
 Tags: slider, carousel, images, responsive, slideshow
-Requires PHP: 7.4
+Requires PHP: 7.2
 Requires at least: 5.2
 Tested up to: 6.3
 Stable tag: 1.0.0
