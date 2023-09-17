@@ -1,16 +1,19 @@
-
-
-=== Plugin Name ===
+Plugin Name: Advance WP Slider Plugin
 Contributors: rajubdpro
 Author: rajubdpro
 Tags: slider, carousel, images, responsive, slideshow
+Requires PHP: 7.4
 Requires at least: 5.2
 Tested up to: 6.3
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This Plugin will active a new feature of your WordPress site.
+This Plugin will activate a new feature of your WordPress site.
+
+== Changelog ==
+
+1. 1.0.0
 
 == Description ==
 
@@ -39,5 +42,15 @@ Advance WP Slider is a powerful and versatile plugin that allows you to create s
 2. Add slides to your slider, including images, captions, and links.
 3. Customize the slider settings to match your website's design and preferences.
 4. Use the provided shortcode to insert the slider into any post, page, or widget.
+
+== Upgrade Notice ==
+1. No technical skill needed
+
+== Frequently Asked Questions ==
+1. You can asked anything
+
+== Screenshots ==
+1. Here is some screenshot
+
 
 Shortcode Example: [AWP-SLIDER]
