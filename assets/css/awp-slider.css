@@ -216,6 +216,14 @@ button.default-btn-one.btn.slider-button {
 .awp-slider-caption{
   padding:0px 250px;
 }
+@media screen and (max-width: 992px) {
+  .awp-slider-caption{
+    padding:0px 50px;
+  }
+}
+button.default-btn-one.btn.slider-button:hover {
+  background: none !important;
+}
 #awp-slider .awp-slider-caption .awp-slider-btn button span {
   color: #fff;
 }

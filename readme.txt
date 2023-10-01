@@ -25,7 +25,7 @@ Advance WP Slider is a powerful and versatile plugin that allows you to create s
 - **Multiple Transition Effects:** Choose from a range of captivating transition effects to enhance the visual appeal of your sliders.
 - **Customizable Styles:** Tailor the appearance of your sliders by customizing colors, fonts, and more.
 - **Image Captions:** Add captions and descriptions to your slider images to provide context and engage your audience.
-- **Shortcode Integration:** Easily embed sliders into posts, pages, or widgets using shortcodes.
+- **Shortcode Integration:** Easily embed sliders into posts, pages, or widgets using shortcode.
 - **Touch and Swipe Support:** Sliders are touch-friendly, ensuring a seamless user experience on mobile devices.
 - **SEO Friendly:** Sliders are designed to be search engine friendly, helping to improve your site's SEO.
 - **User-Friendly Interface:** Create and manage sliders effortlessly with our intuitive admin panel.
@@ -47,10 +47,13 @@ Advance WP Slider is a powerful and versatile plugin that allows you to create s
 1. No technical skill needed
 
 == Frequently Asked Questions ==
-1. You can asked anything
+1. You can ask anything
 
 == Screenshots ==
 1. Here is some screenshot
 
+== Credits ==
+
+**Slider Background Image:** The background image used in this plugin's screenshots is provided by [pexels]https://www.pexels.com/photo/city-skyline-across-body-of-water-during-night-time-3586966/  [pixels] https://images.pexels.com/photos/957002/berchtesgaden-alpine-watzmann-berchtesgaden-national-park-957002.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1. It is used under a free license and is for demonstration purposes only. Please visit their website for more free resources.
 
 Shortcode Example: [AWP-SLIDER]
