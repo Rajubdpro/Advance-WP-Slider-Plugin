@@ -1,4 +1,5 @@
-Plugin Name: Advance WP Slider Plugin
+=== Plugin Name ===
+Plugin Name: Advance WP Slider
 Contributors: rajubdpro
 Author: rajubdpro
 Tags: slider, carousel, images, responsive, slideshow
@@ -13,7 +14,7 @@ This Plugin will activate a new feature of your WordPress site.
 
 == Changelog ==
 
-1. 1.0.0
+ 1.0.0
 
 == Description ==
 
@@ -54,6 +55,6 @@ Advance WP Slider is a powerful and versatile plugin that allows you to create s
 
 == Credits ==
 
-**Slider Background Image:** The background image used in this plugin's screenshots is provided by [pexels]https://www.pexels.com/photo/city-skyline-across-body-of-water-during-night-time-3586966/  [pixels] https://images.pexels.com/photos/957002/berchtesgaden-alpine-watzmann-berchtesgaden-national-park-957002.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1. It is used under a free license and is for demonstration purposes only. Please visit their website for more free resources.
+**Slider Background Image:** The background image used in this plugin's screenshots is provided by [pexels] https://www.pexels.com/photo/city-skyline-across-body-of-water-during-night-time-3586966/  [pixels] https://images.pexels.com/photos/957002/berchtesgaden-alpine-watzmann-berchtesgaden-national-park-957002.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1. It is used under a free license and is for demonstration purposes only. Please visit their website for more free resources.
 
 Shortcode Example: [AWP-SLIDER]
