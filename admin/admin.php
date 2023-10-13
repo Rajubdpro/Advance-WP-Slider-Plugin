@@ -160,7 +160,6 @@ class Awp_slider_Admin
         update_post_meta($post_id, 'slider_button_text', $my_data);
     }
 
-
     /**
      * Save slider button Link data.
      *
@@ -202,8 +201,11 @@ class Awp_slider_Admin
             return;
         }
 
-        // Sanitize user input.
-        $my_data = esc_url_raw($_POST['slider_button_link']); // Escaping as a URL
+        // Unslash the data (reverse of WordPress's slashing).
+        $my_data = wp_unslash($_POST['slider_button_link']);
+
+        // Sanitize user input using sanitize_text_field.
+        $my_data = sanitize_text_field($my_data);
 
         // Update the meta field in the database.
         update_post_meta($post_id, 'slider_button_link', $my_data);
@@ -230,7 +232,7 @@ class Awp_slider_Admin
      * @return void
      */
     public function setting_page_callback() {
-?>
+        ?>
         <div class="wrap ">
             <div class="card">
                 <h1><?php esc_html_e('  How to use awp-slider ', 'advance-wp-slider'); ?></h1>
@@ -252,7 +254,7 @@ class Awp_slider_Admin
                 </ul>
             </div>
         </div>
-<?php
+        <?php
     }
 }
 

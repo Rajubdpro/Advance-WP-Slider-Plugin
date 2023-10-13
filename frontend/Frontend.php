@@ -160,24 +160,27 @@ class Awp_Slider_Frontend
 
                         <!----------- Single ----------->
                         <div class="awp-slider-item"
-                             style="background-image:url(<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
-                             alt="<?php the_title(); ?>); width: 100%;">
+                             style="background-image:url(<?php echo htmlspecialchars(get_the_post_thumbnail_url(get_the_ID(), 'full'), ENT_QUOTES, 'UTF-8'); ?>"
+                             alt="<?php echo htmlspecialchars(get_the_title(), ENT_QUOTES, 'UTF-8'); ?>"
+                             style="width: 100%;">
                             <div class="awp-slider">
                                 <div class="awp-slider-caption">
-                                    <h2><?php the_title(); ?></h2>
-                                    <p><?php echo wp_trim_words(get_the_content(), 40, ''); ?></p>
+                                    <h2><?php echo htmlspecialchars(get_the_title(), ENT_QUOTES, 'UTF-8'); ?></h2>
+                                    <p><?php echo htmlspecialchars(wp_trim_words(get_the_content(), 40, ''), ENT_QUOTES, 'UTF-8'); ?></p>
                                     <div class="awp-slider-btn">
                                         <button class="default-btn-one btn slider-button">
-                                            <a href="<?php echo get_post_meta(get_the_ID(), 'slider_button_link', true); ?>"> <span
-                                                        class="circle" aria-hidden="true">
-                                    <span class="icon arrow"></span>
-                                 </span>
-                                                <span class="button-text">  <?php echo get_post_meta(get_the_ID(), 'slider_button_text', true); ?></span></a>
+                                            <a href="<?php echo htmlspecialchars(get_post_meta(get_the_ID(), 'slider_button_link', true), ENT_QUOTES, 'UTF-8'); ?>">
+                        <span class="circle" aria-hidden="true">
+                            <span class="icon arrow"></span>
+                        </span>
+                                                <span class="button-text"><?php echo htmlspecialchars(get_post_meta(get_the_ID(), 'slider_button_text', true), ENT_QUOTES, 'UTF-8'); ?></span>
+                                            </a>
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
 
                         <?php
                     }
