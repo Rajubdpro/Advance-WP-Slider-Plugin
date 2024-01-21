@@ -116,16 +116,14 @@ class Awp_slider_Admin
      * @return void
      */
 
-    function save_slider_button_text( $post_id ) {
-        // Check if our nonce is set.
-        if ( ! isset($_POST['slider_button_text_nonce']) ) {
+    function save_slider_button_text( $post_id ): void
+    {
+
+        // Verify that the nonce is valid.
+        if ( ! isset( $_POST['slider_button_text_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash ( $_POST['slider_button_text_nonce'] ) ) , 'slider_button_text_nonce' ) ){
             return;
         }
 
-        // Verify that the nonce is valid.
-        if ( ! wp_verify_nonce($_POST['slider_button_text_nonce'], 'slider_button_text_nonce') ) {
-            return;
-        }
 
         // If this is an autosave, our form has not been submitted, so we don't want to do anything.
         if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
@@ -168,15 +166,13 @@ class Awp_slider_Admin
      */
 
     function save_slider_button_link( $post_id ) {
-        // Check if our nonce is set.
-        if ( ! isset($_POST['slider_button_link_nonce']) ) {
+
+        // Verify that the nonce is valid.
+        if ( ! isset( $_POST['slider_button_link_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash ( $_POST['slider_button_link_nonce'] ) ) , 'slider_button_link_nonce' ) ){
             return;
         }
 
-        // Verify that the nonce is valid.
-        if ( ! wp_verify_nonce($_POST['slider_button_link_nonce'], 'slider_button_link_nonce') ) {
-            return;
-        }
+
 
         // If this is an autosave, our form has not been submitted, so we don't want to do anything.
         if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {

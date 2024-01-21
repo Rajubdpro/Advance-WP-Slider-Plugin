@@ -4,7 +4,7 @@ Author: rajubdpro
 Tags: slider, carousel, images, responsive, slideshow
 Requires PHP: 7.2
 Requires at least: 5.2
-Tested up to: 6.3
+Tested up to: 6.4
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -57,3 +57,8 @@ Advance WP Slider is a powerful and versatile plugin that allows you to create s
 **Slider Background Image:** The background image used in this plugin's screenshots is provided by [pexels] https://www.pexels.com/photo/city-skyline-across-body-of-water-during-night-time-3586966/  [pixels] https://images.pexels.com/photos/957002/berchtesgaden-alpine-watzmann-berchtesgaden-national-park-957002.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1. It is used under a free license and is for demonstration purposes only. Please visit their website for more free resources.
 
 Shortcode Example: [AWP-SLIDER]
+
+
+
+Note: This is a slider plugin, it will help you add new feature in your website, its looking good and easy customization and fast loading and seo friendly. you don't need
+another support plugin for this,  this is a single plugin, and you don't need any old experience
