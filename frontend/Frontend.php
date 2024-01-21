@@ -135,7 +135,6 @@ class Awp_Slider_Frontend
 
     function awp_slider_post_loop()
     {
-
         ob_start();
         ?>
         <section id="awp-slider">
